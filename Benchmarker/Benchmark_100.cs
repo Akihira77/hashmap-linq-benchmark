@@ -8,7 +8,7 @@ using BenchmarkDotNet.Order;
 public class Benchmarker_100_Element
 {
     private AppDbContext _context = new AppDbContext();
-    private List<Entity> batchEntities = new List<Entity>();
+    private List<Entity> dataFromSpreadsheet = new List<Entity>();
 
     [GlobalSetup]
     public void Setup()
@@ -18,7 +18,7 @@ public class Benchmarker_100_Element
         //INFO: DUPLICATE DATA FROM DATABASE
         for (int i = 1; i <= 50; i++)
         {
-            batchEntities.Add(new Entity
+            dataFromSpreadsheet.Add(new Entity
             {
                 DistrictCode = "District-" + i,
                 SegmentBusinessName = "Segment Business Name " + i,
@@ -32,7 +32,7 @@ public class Benchmarker_100_Element
         //INFO: UNIQUE DATA
         for (int i = 1000_001; i <= 1000_030; i++)
         {
-            batchEntities.Add(new Entity
+            dataFromSpreadsheet.Add(new Entity
             {
                 DistrictCode = "District-" + i,
                 SegmentBusinessName = "Segment Business Name " + i,
@@ -45,18 +45,18 @@ public class Benchmarker_100_Element
 
         //INFO: DUPLICATE EXCEL DATA
         var random = new Random();
-        int listSize = batchEntities.Count;
+        int listSize = dataFromSpreadsheet.Count;
         for (int i = 0; i < 20; i++)
         {
             int duplicateIndex = random.Next(0, listSize);
-            batchEntities.Add(new Entity
+            dataFromSpreadsheet.Add(new Entity
             {
-                DistrictCode = batchEntities[duplicateIndex].DistrictCode,
-                SegmentBusinessName = batchEntities[duplicateIndex].SegmentBusinessName,
-                ParameterDescName = batchEntities[duplicateIndex].ParameterDescName,
-                CustomerCode = batchEntities[duplicateIndex].CustomerCode,
-                IsForContract = batchEntities[duplicateIndex].IsForContract,
-                IsForAccrue = batchEntities[duplicateIndex].IsForAccrue,
+                DistrictCode = dataFromSpreadsheet[duplicateIndex].DistrictCode,
+                SegmentBusinessName = dataFromSpreadsheet[duplicateIndex].SegmentBusinessName,
+                ParameterDescName = dataFromSpreadsheet[duplicateIndex].ParameterDescName,
+                CustomerCode = dataFromSpreadsheet[duplicateIndex].CustomerCode,
+                IsForContract = dataFromSpreadsheet[duplicateIndex].IsForContract,
+                IsForAccrue = dataFromSpreadsheet[duplicateIndex].IsForAccrue,
             });
         }
     }
@@ -67,7 +67,7 @@ public class Benchmarker_100_Element
         var dbEntitiesSet = _context.Entities
             .Select(e => Entity.ToUnique(e).CloneLower())
             .ToHashSet();
-        var nonExistingEntities = batchEntities
+        var nonExistingEntities = dataFromSpreadsheet
             .Select(e => Entity.ToUnique(e).CloneLower())
             .Where(e => !dbEntitiesSet.Contains(e));
 
@@ -82,7 +82,7 @@ public class Benchmarker_100_Element
                 key => Entity.ToUnique(key).CloneLower(),
                 value => value
             );
-        var nonExistingEntities = batchEntities
+        var nonExistingEntities = dataFromSpreadsheet
             .Select(e => Entity.ToUnique(e).CloneLower())
             .Where(e => !dbEntitiesDict.ContainsKey(e));
 
@@ -94,7 +94,7 @@ public class Benchmarker_100_Element
     {
         var predicate = PredicateBuilder.New<Entity>(false);
 
-        foreach (var item in batchEntities)
+        foreach (var item in dataFromSpreadsheet)
         {
             predicate = predicate.Or(data =>
                 string.Equals(data.DistrictCode.ToLower(), item.DistrictCode.ToLower())
@@ -105,7 +105,7 @@ public class Benchmarker_100_Element
 
         var existingEntities = _context.Entities.Where(predicate).ToList();
         var existingEntitiesToUniqueIdentifier = existingEntities.Select(e => Entity.ToUnique(e).CloneLower()).ToList();
-        var nonExistingEntities = batchEntities
+        var nonExistingEntities = dataFromSpreadsheet
             .Select(e => Entity.ToUnique(e).CloneLower())
             .Except(existingEntitiesToUniqueIdentifier)
             .ToList();
@@ -119,7 +119,7 @@ public class Benchmarker_100_Element
         var dbEntitiesList = _context.Entities
             .Select(e => Entity.ToUnique(e))
             .ToList();
-        var nonExistingEntities = batchEntities
+        var nonExistingEntities = dataFromSpreadsheet
             .Select(e => Entity.ToUnique(e))
             .Where(e => !dbEntitiesList.Any(db =>
                 string.Equals(db.CustomerCode, e.CustomerCode, StringComparison.OrdinalIgnoreCase)
