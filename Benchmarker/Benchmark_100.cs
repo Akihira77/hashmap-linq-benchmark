@@ -83,7 +83,8 @@ public class Benchmarker_100_Element
                 value => value
             );
         var nonExistingEntities = batchEntities
-            .Where(e => !dbEntitiesDict.ContainsKey(Entity.ToUnique(e).CloneLower()));
+            .Select(e => Entity.ToUnique(e).CloneLower())
+            .Where(e => !dbEntitiesDict.ContainsKey(e));
 
         int count = nonExistingEntities.Count();
     }

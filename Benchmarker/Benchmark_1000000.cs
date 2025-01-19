@@ -76,6 +76,21 @@ public class Benchmarker_1000000_Element
     }
 
     [Benchmark]
+    public void DictionaryAndContains()
+    {
+        var dbEntitiesDict = _context.Entities
+            .ToDictionary(
+                key => Entity.ToUnique(key).CloneLower(),
+                value => value
+            );
+        var nonExistingEntities = batchEntities
+            .Select(e => Entity.ToUnique(e).CloneLower())
+            .Where(e => !dbEntitiesDict.ContainsKey(e));
+
+        int count = nonExistingEntities.Count();
+    }
+
+    [Benchmark]
     public void ListAndPredicate()
     {
         var predicate = PredicateBuilder.New<Entity>(false);
@@ -116,21 +131,6 @@ public class Benchmarker_1000000_Element
             .ToList();
 
         int count = nonExistingEntities.Count;
-    }
-
-    [Benchmark]
-    public void DictionaryAndContains()
-    {
-        var dbEntitiesDict = _context.Entities
-            .ToDictionary(
-                key => Entity.ToUnique(key).CloneLower(),
-                value => value
-            );
-        var nonExistingEntities = batchEntities
-            .Select(e => Entity.ToUnique(e).CloneLower())
-            .Where(e => !dbEntitiesDict.ContainsKey(e));
-
-        int count = nonExistingEntities.Count();
     }
 
     [GlobalCleanup]
