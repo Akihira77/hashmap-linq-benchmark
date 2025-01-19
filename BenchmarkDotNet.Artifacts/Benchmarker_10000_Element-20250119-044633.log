@@ -1,0 +1,341 @@
+// Validating benchmarks:
+// ***** BenchmarkRunner: Start   *****
+// ***** Found 4 benchmark(s) in total *****
+// ***** Building 1 exe(s) in Parallel: Start   *****
+// start dotnet  restore /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true /p:IntermediateOutputPath="/home/akihira17/programming/dotnet/benchmarking/inventbackend/bin/Release/net8.0/DefaultJob/obj/Release/net8.0/" /p:OutDir="/home/akihira17/programming/dotnet/benchmarking/inventbackend/bin/Release/net8.0/DefaultJob/bin/Release/net8.0/" /p:OutputPath="/home/akihira17/programming/dotnet/benchmarking/inventbackend/bin/Release/net8.0/DefaultJob/bin/Release/net8.0/" in /home/akihira17/programming/dotnet/benchmarking/inventbackend/bin/Release/net8.0/DefaultJob
+// command took 0.97 sec and exited with 0
+// start dotnet  build -c Release --no-restore /p:UseSharedCompilation=false /p:BuildInParallel=false /m:1 /p:Deterministic=true /p:Optimize=true /p:IntermediateOutputPath="/home/akihira17/programming/dotnet/benchmarking/inventbackend/bin/Release/net8.0/DefaultJob/obj/Release/net8.0/" /p:OutDir="/home/akihira17/programming/dotnet/benchmarking/inventbackend/bin/Release/net8.0/DefaultJob/bin/Release/net8.0/" /p:OutputPath="/home/akihira17/programming/dotnet/benchmarking/inventbackend/bin/Release/net8.0/DefaultJob/bin/Release/net8.0/" --output "/home/akihira17/programming/dotnet/benchmarking/inventbackend/bin/Release/net8.0/DefaultJob/bin/Release/net8.0/" in /home/akihira17/programming/dotnet/benchmarking/inventbackend/bin/Release/net8.0/DefaultJob
+// command took 4.97 sec and exited with 0
+// ***** Done, took 00:00:06 (6.11 sec)   *****
+// Found 4 benchmarks:
+//   Benchmarker_10000_Element.HashSetAndContains: DefaultJob
+//   Benchmarker_10000_Element.DictionaryAndContains: DefaultJob
+//   Benchmarker_10000_Element.ListAndPredicate: DefaultJob
+//   Benchmarker_10000_Element.ListAndLINQ: DefaultJob
+
+// **************************
+// Benchmark: Benchmarker_10000_Element.HashSetAndContains: DefaultJob
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet DefaultJob.dll --anonymousPipes 110 111 --benchmarkName Benchmarker_10000_Element.HashSetAndContains --job Default --benchmarkId 0 in /home/akihira17/programming/dotnet/benchmarking/inventbackend/bin/Release/net8.0/DefaultJob/bin/Release/net8.0
+// Failed to set up high priority (Permission denied). In order to run benchmarks with high priority, make sure you have the right permissions.
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.14.0
+// Runtime=.NET 8.0.12 (8.0.1224.60305), X64 RyuJIT AVX-512F+CD+BW+DQ+VL+VBMI
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX-512F+CD+BW+DQ+VL+VBMI,AES,BMI1,BMI2,FMA,LZCNT,PCLMUL,POPCNT VectorSize=256
+// Job: DefaultJob
+
+OverheadJitting  1: 1 op, 427480.00 ns, 427.4800 us/op
+WorkloadJitting  1: 1 op, 13871901558.00 ns, 13.8719 s/op
+
+WorkloadWarmup   1: 1 op, 6040340165.00 ns, 6.0403 s/op
+WorkloadWarmup   2: 1 op, 6042342033.00 ns, 6.0423 s/op
+WorkloadWarmup   3: 1 op, 6248884633.00 ns, 6.2489 s/op
+WorkloadWarmup   4: 1 op, 6084334340.00 ns, 6.0843 s/op
+WorkloadWarmup   5: 1 op, 6079133899.00 ns, 6.0791 s/op
+WorkloadWarmup   6: 1 op, 5935024269.00 ns, 5.9350 s/op
+WorkloadWarmup   7: 1 op, 6055150281.00 ns, 6.0552 s/op
+WorkloadWarmup   8: 1 op, 6081218927.00 ns, 6.0812 s/op
+WorkloadWarmup   9: 1 op, 6121410786.00 ns, 6.1214 s/op
+WorkloadWarmup  10: 1 op, 5856509423.00 ns, 5.8565 s/op
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 6141780929.00 ns, 6.1418 s/op
+WorkloadActual   2: 1 op, 5887537171.00 ns, 5.8875 s/op
+WorkloadActual   3: 1 op, 6138017494.00 ns, 6.1380 s/op
+WorkloadActual   4: 1 op, 6101872548.00 ns, 6.1019 s/op
+WorkloadActual   5: 1 op, 6091604310.00 ns, 6.0916 s/op
+WorkloadActual   6: 1 op, 5918509370.00 ns, 5.9185 s/op
+WorkloadActual   7: 1 op, 5928607522.00 ns, 5.9286 s/op
+WorkloadActual   8: 1 op, 5908495337.00 ns, 5.9085 s/op
+WorkloadActual   9: 1 op, 6101902523.00 ns, 6.1019 s/op
+WorkloadActual  10: 1 op, 6094256928.00 ns, 6.0943 s/op
+WorkloadActual  11: 1 op, 5876995953.00 ns, 5.8770 s/op
+WorkloadActual  12: 1 op, 6215271007.00 ns, 6.2153 s/op
+WorkloadActual  13: 1 op, 6146511572.00 ns, 6.1465 s/op
+WorkloadActual  14: 1 op, 6122352337.00 ns, 6.1224 s/op
+WorkloadActual  15: 1 op, 6077767315.00 ns, 6.0778 s/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 6141780929.00 ns, 6.1418 s/op
+WorkloadResult   2: 1 op, 5887537171.00 ns, 5.8875 s/op
+WorkloadResult   3: 1 op, 6138017494.00 ns, 6.1380 s/op
+WorkloadResult   4: 1 op, 6101872548.00 ns, 6.1019 s/op
+WorkloadResult   5: 1 op, 6091604310.00 ns, 6.0916 s/op
+WorkloadResult   6: 1 op, 5918509370.00 ns, 5.9185 s/op
+WorkloadResult   7: 1 op, 5928607522.00 ns, 5.9286 s/op
+WorkloadResult   8: 1 op, 5908495337.00 ns, 5.9085 s/op
+WorkloadResult   9: 1 op, 6101902523.00 ns, 6.1019 s/op
+WorkloadResult  10: 1 op, 6094256928.00 ns, 6.0943 s/op
+WorkloadResult  11: 1 op, 5876995953.00 ns, 5.8770 s/op
+WorkloadResult  12: 1 op, 6215271007.00 ns, 6.2153 s/op
+WorkloadResult  13: 1 op, 6146511572.00 ns, 6.1465 s/op
+WorkloadResult  14: 1 op, 6122352337.00 ns, 6.1224 s/op
+WorkloadResult  15: 1 op, 6077767315.00 ns, 6.0778 s/op
+// GC:  95 34 3 692619480 1
+// Threading:  102338 2601 1
+
+// AfterAll
+// Benchmark Process 588489 has exited with code 0.
+
+Mean = 6.050 s, StdErr = 0.029 s (0.48%), N = 15, StdDev = 0.112 s
+Min = 5.877 s, Q1 = 5.924 s, Median = 6.094 s, Q3 = 6.130 s, Max = 6.215 s
+IQR = 0.207 s, LowerFence = 5.614 s, UpperFence = 6.440 s
+ConfidenceInterval = [5.930 s; 6.170 s] (CI 99.9%), Margin = 0.120 s (1.98% of Mean)
+Skewness = -0.41, Kurtosis = 1.48, MValue = 2
+
+// ** Remained 3 (75.0 %) benchmark(s) to run. Estimated finish 2025-01-19 5:00 (0h 10m from now) **
+// **************************
+// Benchmark: Benchmarker_10000_Element.DictionaryAndContains: DefaultJob
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet DefaultJob.dll --anonymousPipes 112 113 --benchmarkName Benchmarker_10000_Element.DictionaryAndContains --job Default --benchmarkId 1 in /home/akihira17/programming/dotnet/benchmarking/inventbackend/bin/Release/net8.0/DefaultJob/bin/Release/net8.0
+// Failed to set up high priority (Permission denied). In order to run benchmarks with high priority, make sure you have the right permissions.
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.14.0
+// Runtime=.NET 8.0.12 (8.0.1224.60305), X64 RyuJIT AVX-512F+CD+BW+DQ+VL+VBMI
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX-512F+CD+BW+DQ+VL+VBMI,AES,BMI1,BMI2,FMA,LZCNT,PCLMUL,POPCNT VectorSize=256
+// Job: DefaultJob
+
+OverheadJitting  1: 1 op, 242876.00 ns, 242.8760 us/op
+WorkloadJitting  1: 1 op, 11616601292.00 ns, 11.6166 s/op
+
+WorkloadWarmup   1: 1 op, 6223617520.00 ns, 6.2236 s/op
+WorkloadWarmup   2: 1 op, 5991598397.00 ns, 5.9916 s/op
+WorkloadWarmup   3: 1 op, 5949455275.00 ns, 5.9495 s/op
+WorkloadWarmup   4: 1 op, 5861910953.00 ns, 5.8619 s/op
+WorkloadWarmup   5: 1 op, 6026327552.00 ns, 6.0263 s/op
+WorkloadWarmup   6: 1 op, 5909099693.00 ns, 5.9091 s/op
+WorkloadWarmup   7: 1 op, 5929889124.00 ns, 5.9299 s/op
+WorkloadWarmup   8: 1 op, 5938768800.00 ns, 5.9388 s/op
+WorkloadWarmup   9: 1 op, 5919754227.00 ns, 5.9198 s/op
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 5939693891.00 ns, 5.9397 s/op
+WorkloadActual   2: 1 op, 5925634457.00 ns, 5.9256 s/op
+WorkloadActual   3: 1 op, 5919802960.00 ns, 5.9198 s/op
+WorkloadActual   4: 1 op, 5919844087.00 ns, 5.9198 s/op
+WorkloadActual   5: 1 op, 5889763134.00 ns, 5.8898 s/op
+WorkloadActual   6: 1 op, 6158712085.00 ns, 6.1587 s/op
+WorkloadActual   7: 1 op, 5906923248.00 ns, 5.9069 s/op
+WorkloadActual   8: 1 op, 5926082479.00 ns, 5.9261 s/op
+WorkloadActual   9: 1 op, 5865562711.00 ns, 5.8656 s/op
+WorkloadActual  10: 1 op, 5990612653.00 ns, 5.9906 s/op
+WorkloadActual  11: 1 op, 5939534333.00 ns, 5.9395 s/op
+WorkloadActual  12: 1 op, 5946020541.00 ns, 5.9460 s/op
+WorkloadActual  13: 1 op, 6111044799.00 ns, 6.1110 s/op
+WorkloadActual  14: 1 op, 5888903581.00 ns, 5.8889 s/op
+WorkloadActual  15: 1 op, 6124113873.00 ns, 6.1241 s/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 5939693891.00 ns, 5.9397 s/op
+WorkloadResult   2: 1 op, 5925634457.00 ns, 5.9256 s/op
+WorkloadResult   3: 1 op, 5919802960.00 ns, 5.9198 s/op
+WorkloadResult   4: 1 op, 5919844087.00 ns, 5.9198 s/op
+WorkloadResult   5: 1 op, 5889763134.00 ns, 5.8898 s/op
+WorkloadResult   6: 1 op, 5906923248.00 ns, 5.9069 s/op
+WorkloadResult   7: 1 op, 5926082479.00 ns, 5.9261 s/op
+WorkloadResult   8: 1 op, 5865562711.00 ns, 5.8656 s/op
+WorkloadResult   9: 1 op, 5990612653.00 ns, 5.9906 s/op
+WorkloadResult  10: 1 op, 5939534333.00 ns, 5.9395 s/op
+WorkloadResult  11: 1 op, 5946020541.00 ns, 5.9460 s/op
+WorkloadResult  12: 1 op, 5888903581.00 ns, 5.8889 s/op
+// GC:  95 34 3 714265472 1
+// Threading:  102199 2311 1
+
+// AfterAll
+// Benchmark Process 589804 has exited with code 0.
+
+Mean = 5.922 s, StdErr = 0.009 s (0.16%), N = 12, StdDev = 0.032 s
+Min = 5.866 s, Q1 = 5.903 s, Median = 5.923 s, Q3 = 5.940 s, Max = 5.991 s
+IQR = 0.037 s, LowerFence = 5.847 s, UpperFence = 5.995 s
+ConfidenceInterval = [5.880 s; 5.963 s] (CI 99.9%), Margin = 0.041 s (0.70% of Mean)
+Skewness = 0.27, Kurtosis = 2.7, MValue = 2
+
+// ** Remained 2 (50.0 %) benchmark(s) to run. Estimated finish 2025-01-19 5:00 (0h 6m from now) **
+// **************************
+// Benchmark: Benchmarker_10000_Element.ListAndPredicate: DefaultJob
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet DefaultJob.dll --anonymousPipes 112 113 --benchmarkName Benchmarker_10000_Element.ListAndPredicate --job Default --benchmarkId 2 in /home/akihira17/programming/dotnet/benchmarking/inventbackend/bin/Release/net8.0/DefaultJob/bin/Release/net8.0
+// Failed to set up high priority (Permission denied). In order to run benchmarks with high priority, make sure you have the right permissions.
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.14.0
+// Runtime=.NET 8.0.12 (8.0.1224.60305), X64 RyuJIT AVX-512F+CD+BW+DQ+VL+VBMI
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX-512F+CD+BW+DQ+VL+VBMI,AES,BMI1,BMI2,FMA,LZCNT,PCLMUL,POPCNT VectorSize=256
+// Job: DefaultJob
+
+OverheadJitting  1: 1 op, 245516.00 ns, 245.5160 us/op
+No Workload Results were obtained from the run.
+// Benchmark Process 590973 has exited with code 134.
+
+// ** Remained 1 (25.0 %) benchmark(s) to run. Estimated finish 2025-01-19 4:55 (0h 2m from now) **
+// **************************
+// Benchmark: Benchmarker_10000_Element.ListAndLINQ: DefaultJob
+// *** Execute ***
+// Launch: 1 / 1
+// Execute: dotnet DefaultJob.dll --anonymousPipes 112 113 --benchmarkName Benchmarker_10000_Element.ListAndLINQ --job Default --benchmarkId 3 in /home/akihira17/programming/dotnet/benchmarking/inventbackend/bin/Release/net8.0/DefaultJob/bin/Release/net8.0
+// Failed to set up high priority (Permission denied). In order to run benchmarks with high priority, make sure you have the right permissions.
+// BeforeAnythingElse
+
+// Benchmark Process Environment Information:
+// BenchmarkDotNet v0.14.0
+// Runtime=.NET 8.0.12 (8.0.1224.60305), X64 RyuJIT AVX-512F+CD+BW+DQ+VL+VBMI
+// GC=Concurrent Workstation
+// HardwareIntrinsics=AVX-512F+CD+BW+DQ+VL+VBMI,AES,BMI1,BMI2,FMA,LZCNT,PCLMUL,POPCNT VectorSize=256
+// Job: DefaultJob
+
+OverheadJitting  1: 1 op, 237585.00 ns, 237.5850 us/op
+WorkloadJitting  1: 1 op, 492707757664.00 ns, 8.2118 m/op
+
+WorkloadWarmup   1: 1 op, 476097617778.00 ns, 7.9350 m/op
+WorkloadWarmup   2: 1 op, 478136773600.00 ns, 7.9689 m/op
+WorkloadWarmup   3: 1 op, 476439383748.00 ns, 7.9407 m/op
+WorkloadWarmup   4: 1 op, 477526949571.00 ns, 7.9588 m/op
+WorkloadWarmup   5: 1 op, 476459820831.00 ns, 7.9410 m/op
+WorkloadWarmup   6: 1 op, 477608229926.00 ns, 7.9601 m/op
+
+// BeforeActualRun
+WorkloadActual   1: 1 op, 481980878994.00 ns, 8.0330 m/op
+WorkloadActual   2: 1 op, 482433953498.00 ns, 8.0406 m/op
+WorkloadActual   3: 1 op, 480159591896.00 ns, 8.0027 m/op
+WorkloadActual   4: 1 op, 482394382668.00 ns, 8.0399 m/op
+WorkloadActual   5: 1 op, 482045818447.00 ns, 8.0341 m/op
+WorkloadActual   6: 1 op, 481815717638.00 ns, 8.0303 m/op
+WorkloadActual   7: 1 op, 485341565408.00 ns, 8.0890 m/op
+WorkloadActual   8: 1 op, 480575995967.00 ns, 8.0096 m/op
+WorkloadActual   9: 1 op, 482203938007.00 ns, 8.0367 m/op
+WorkloadActual  10: 1 op, 480743385012.00 ns, 8.0124 m/op
+WorkloadActual  11: 1 op, 482279277428.00 ns, 8.0380 m/op
+WorkloadActual  12: 1 op, 481884761850.00 ns, 8.0314 m/op
+WorkloadActual  13: 1 op, 480499175805.00 ns, 8.0083 m/op
+WorkloadActual  14: 1 op, 481724111430.00 ns, 8.0287 m/op
+WorkloadActual  15: 1 op, 488324414781.00 ns, 8.1387 m/op
+
+// AfterActualRun
+WorkloadResult   1: 1 op, 481980878994.00 ns, 8.0330 m/op
+WorkloadResult   2: 1 op, 482433953498.00 ns, 8.0406 m/op
+WorkloadResult   3: 1 op, 480159591896.00 ns, 8.0027 m/op
+WorkloadResult   4: 1 op, 482394382668.00 ns, 8.0399 m/op
+WorkloadResult   5: 1 op, 482045818447.00 ns, 8.0341 m/op
+WorkloadResult   6: 1 op, 481815717638.00 ns, 8.0303 m/op
+WorkloadResult   7: 1 op, 480575995967.00 ns, 8.0096 m/op
+WorkloadResult   8: 1 op, 482203938007.00 ns, 8.0367 m/op
+WorkloadResult   9: 1 op, 480743385012.00 ns, 8.0124 m/op
+WorkloadResult  10: 1 op, 482279277428.00 ns, 8.0380 m/op
+WorkloadResult  11: 1 op, 481884761850.00 ns, 8.0314 m/op
+WorkloadResult  12: 1 op, 480499175805.00 ns, 8.0083 m/op
+WorkloadResult  13: 1 op, 481724111430.00 ns, 8.0287 m/op
+// GC:  67 1 0 350811352 1
+// Threading:  104853 2818 1
+// Exceptions:  8
+
+// AfterAll
+// Benchmark Process 591039 has exited with code 0.
+
+Mean = 8.027 m, StdErr = 0.004 m (0.05%), N = 13, StdDev = 0.013 m
+Min = 8.003 m, Q1 = 8.012 m, Median = 8.031 m, Q3 = 8.037 m, Max = 8.041 m
+IQR = 0.024 m, LowerFence = 7.976 m, UpperFence = 8.073 m
+ConfidenceInterval = [8.011 m; 8.043 m] (CI 99.9%), Margin = 0.016 m (0.20% of Mean)
+Skewness = -0.62, Kurtosis = 1.61, MValue = 2
+
+// ** Remained 0 (0.0 %) benchmark(s) to run. Estimated finish 2025-01-19 7:58 (0h 0m from now) **
+// ***** BenchmarkRunner: Finish  *****
+
+// * Export *
+  BenchmarkDotNet.Artifacts/20250119-044633/Benchmarker_10000_Element-report.csv
+  BenchmarkDotNet.Artifacts/20250119-044633/Benchmarker_10000_Element-report-github.md
+  BenchmarkDotNet.Artifacts/20250119-044633/Benchmarker_10000_Element-report.html
+
+// * Detailed results *
+Benchmarker_10000_Element.ListAndPredicate: DefaultJob
+Runtime = .NET 8.0.12 (8.0.1224.60305), X64 RyuJIT AVX-512F+CD+BW+DQ+VL+VBMI; GC = Concurrent Workstation
+There are not any results runs
+
+Benchmarker_10000_Element.DictionaryAndContains: DefaultJob
+Runtime = .NET 8.0.12 (8.0.1224.60305), X64 RyuJIT AVX-512F+CD+BW+DQ+VL+VBMI; GC = Concurrent Workstation
+Mean = 5.922 s, StdErr = 0.009 s (0.16%), N = 12, StdDev = 0.032 s
+Min = 5.866 s, Q1 = 5.903 s, Median = 5.923 s, Q3 = 5.940 s, Max = 5.991 s
+IQR = 0.037 s, LowerFence = 5.847 s, UpperFence = 5.995 s
+ConfidenceInterval = [5.880 s; 5.963 s] (CI 99.9%), Margin = 0.041 s (0.70% of Mean)
+Skewness = 0.27, Kurtosis = 2.7, MValue = 2
+-------------------- Histogram --------------------
+[5.847 s ; 5.992 s) | @@@@@@@@@@@@
+---------------------------------------------------
+
+Benchmarker_10000_Element.HashSetAndContains: DefaultJob
+Runtime = .NET 8.0.12 (8.0.1224.60305), X64 RyuJIT AVX-512F+CD+BW+DQ+VL+VBMI; GC = Concurrent Workstation
+Mean = 6.050 s, StdErr = 0.029 s (0.48%), N = 15, StdDev = 0.112 s
+Min = 5.877 s, Q1 = 5.924 s, Median = 6.094 s, Q3 = 6.130 s, Max = 6.215 s
+IQR = 0.207 s, LowerFence = 5.614 s, UpperFence = 6.440 s
+ConfidenceInterval = [5.930 s; 6.170 s] (CI 99.9%), Margin = 0.120 s (1.98% of Mean)
+Skewness = -0.41, Kurtosis = 1.48, MValue = 2
+-------------------- Histogram --------------------
+[5.843 s ; 6.051 s) | @@@@@
+[6.051 s ; 6.275 s) | @@@@@@@@@@
+---------------------------------------------------
+
+Benchmarker_10000_Element.ListAndLINQ: DefaultJob
+Runtime = .NET 8.0.12 (8.0.1224.60305), X64 RyuJIT AVX-512F+CD+BW+DQ+VL+VBMI; GC = Concurrent Workstation
+Mean = 8.027 m, StdErr = 0.004 m (0.05%), N = 13, StdDev = 0.013 m
+Min = 8.003 m, Q1 = 8.012 m, Median = 8.031 m, Q3 = 8.037 m, Max = 8.041 m
+IQR = 0.024 m, LowerFence = 7.976 m, UpperFence = 8.073 m
+ConfidenceInterval = [8.011 m; 8.043 m] (CI 99.9%), Margin = 0.016 m (0.20% of Mean)
+Skewness = -0.62, Kurtosis = 1.61, MValue = 2
+-------------------- Histogram --------------------
+[7.995 m ; 8.048 m) | @@@@@@@@@@@@@
+---------------------------------------------------
+
+// * Summary *
+
+BenchmarkDotNet v0.14.0, Ubuntu 24.04.1 LTS (Noble Numbat) WSL
+11th Gen Intel Core i5-11300H 3.10GHz, 1 CPU, 6 logical and 3 physical cores
+.NET SDK 8.0.112
+  [Host]     : .NET 8.0.12 (8.0.1224.60305), X64 RyuJIT AVX-512F+CD+BW+DQ+VL+VBMI
+  DefaultJob : .NET 8.0.12 (8.0.1224.60305), X64 RyuJIT AVX-512F+CD+BW+DQ+VL+VBMI
+
+
+| Method                | Mean      | Error    | StdDev   | Rank | Gen0       | Gen1       | Gen2      | Allocated |
+|---------------------- |----------:|---------:|---------:|-----:|-----------:|-----------:|----------:|----------:|
+| ListAndPredicate      |        NA |       NA |       NA |    ? |         NA |         NA |        NA |        NA |
+| DictionaryAndContains |   5.922 s | 0.0414 s | 0.0323 s |    1 | 95000.0000 | 34000.0000 | 3000.0000 | 681.18 MB |
+| HashSetAndContains    |   6.050 s | 0.1200 s | 0.1122 s |    1 | 95000.0000 | 34000.0000 | 3000.0000 | 660.53 MB |
+| ListAndLINQ           | 481.595 s | 0.9598 s | 0.8015 s |    2 | 67000.0000 |  1000.0000 |         - | 334.56 MB |
+
+Benchmarks with issues:
+  Benchmarker_10000_Element.ListAndPredicate: DefaultJob
+
+// * Hints *
+Outliers
+  Benchmarker_10000_Element.DictionaryAndContains: Default -> 3 outliers were removed (6.11 s..6.16 s)
+  Benchmarker_10000_Element.ListAndLINQ: Default           -> 2 outliers were removed (8.09 m, 8.14 m)
+
+// * Legends *
+  Mean      : Arithmetic mean of all measurements
+  Error     : Half of 99.9% confidence interval
+  StdDev    : Standard deviation of all measurements
+  Rank      : Relative position of current benchmark mean among all benchmarks (Arabic style)
+  Gen0      : GC Generation 0 collects per 1000 operations
+  Gen1      : GC Generation 1 collects per 1000 operations
+  Gen2      : GC Generation 2 collects per 1000 operations
+  Allocated : Allocated memory per single operation (managed only, inclusive, 1KB = 1024B)
+  1 s       : 1 Second (1 sec)
+
+// * Diagnostic Output - MemoryDiagnoser *
+
+
+// ***** BenchmarkRunner: End *****
+Run time: 03:12:04 (11524.2 sec), executed benchmarks: 4
+
+Global total time: 03:12:10 (11530.48 sec), executed benchmarks: 4
+// * Artifacts cleanup *
+Artifacts cleanup is finished
